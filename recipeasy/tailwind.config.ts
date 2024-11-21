@@ -25,7 +25,7 @@ export default {
       },
       fontFamily: {
         'support': "var(--font-support)",
-        'sans': "var(--color-sans)",
+        'sans': ["Arial", 'sans-sesrif'],
       },
     },
   },

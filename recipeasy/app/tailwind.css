@@ -10,7 +10,7 @@
   --color-secondary: #000000;
   
   --color-tertiary: #FF00A8;
-  --color-tertirary-light: #FFB2C2;
+  --color-tertiary-light: #FFB2C2;
 
   --color-focus: #2EAEFF;
 
@@ -21,10 +21,23 @@
 
   /* fonts */
   --font-support: pacifico, sans-serif;
-  --font-copy: arial, sans-serif;
+  --font-copy: "'Arial', sans-serif";
 }
 
 html,
 body {
 
+}
+.design-language-page h6 .label {
+  @apply font-sans text-xs uppercase;
+}
+
+h1 {
+  @apply font-support text-4xl;
+}
+h2 {
+  @apply font-sans text-xl capitalize;
+}
+h3 {
+  @apply font-sans text-base uppercase;
 }
