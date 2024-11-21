@@ -2,11 +2,42 @@
 @tailwind components;
 @tailwind utilities;
 
+
+:root {
+  --color-primary: #D9F409;
+  --color-primary-dark: #00790E;
+
+  --color-secondary: #000000;
+  
+  --color-tertiary: #FF00A8;
+  --color-tertiary-light: #FFB2C2;
+
+  --color-focus: #2EAEFF;
+
+  --color-black: #000000;
+  --color-gray: #A3A3A3;
+  --color-white: #ffffff;
+  --color-transparent: transparent;
+
+  /* fonts */
+  --font-support: pacifico, sans-serif;
+  --font-copy: "'Arial', sans-serif";
+}
+
 html,
 body {
-  @apply bg-white;
 
-  @media (prefers-color-scheme: dark) {
-    color-scheme: dark;
-  }
+}
+.design-language-page h6 .label {
+  @apply font-sans text-xs uppercase;
+}
+
+h1 {
+  @apply font-support text-4xl;
+}
+h2 {
+  @apply font-sans text-xl capitalize;
+}
+h3 {
+  @apply font-sans text-base uppercase;
 }
