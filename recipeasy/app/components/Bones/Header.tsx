@@ -1,5 +1,6 @@
 import { Link } from "@remix-run/react";
 import Logo from "./Logo";
+import Button from "../Button";
 
 export default function Index() {
     return(
@@ -7,9 +8,7 @@ export default function Index() {
             <Link to="/">
                 <Logo />
             </Link>
-            <Link to="/recipes/add" className="button button-primary">
-                Add a Recipe
-            </Link>
+            <Button action="link" link="/recipes/add" label="Add a Recipe" style="primary"/>
         </div>
     )
 }
