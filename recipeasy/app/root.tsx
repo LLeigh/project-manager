@@ -8,6 +8,8 @@ import {
 import type { LinksFunction } from "@remix-run/node";
 
 import "./tailwind.css";
+import FooterNav from "./components/Bones/FooterNav";
+import Header from "./components/Bones/Header";
 
 export const links: LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -28,11 +30,15 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="https://use.typekit.net/zbe0tjp.css"></link>
+        <link rel="stylesheet" href="https://use.typekit.net/zbe0tjp.css"></link>
         <Meta />
         <Links />
       </head>
-      <body>
-        {children}
+      <body className="scrollbar scrollbar-track-primary-dark scrollbar-thumb-primary">
+        <Header />
+          {children}
+        <FooterNav />
         <ScrollRestoration />
         <Scripts />
       </body>
