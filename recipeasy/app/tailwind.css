@@ -33,11 +33,88 @@ body {
 }
 
 h1 {
-  @apply font-support text-4xl;
+  @apply font-support capitalize text-4xl my-6;
 }
 h2 {
-  @apply font-sans text-xl capitalize;
+  @apply font-sans text-xl capitalize my-4;
 }
 h3 {
-  @apply font-sans text-base uppercase;
+  @apply font-support text-2xl capitalize;
+}
+
+h4 {
+  @apply font-sans text-base uppercase; 
+}
+
+.background-image {
+  background-image: url('/assets/images/background.png');
+  background-size: 80%;
+  @apply bg-repeat;
+}
+
+/* Component Styles */
+
+/* logo */
+.logo {
+  @apply flex flex-row items-center;
+}
+.logo span {
+  @apply font-support text-4xl;
+  @apply ml-1 mb-4;
+}
+.logo img {
+  @apply h-12 w-12;
+}
+/* buttons & links */
+a.link {
+  @apply text-black text-sm font-bold underline uppercase;
+  @apply hover:text-focus;
+}
+
+.button {
+  @apply rounded-full;
+  @apply text-sm font-semibold uppercase;
+  @apply px-4 py-2;
+}
+.button-primary {
+  @apply bg-secondary text-primary;
+  @apply hover:text-white;
+}
+.button-secondary {
+  @apply bg-primary text-secondary;
+  @apply hover:text-white hover:bg-black;
+}
+/* Bone Styles  */
+
+/* header */
+.header {
+  @apply flex flex-row items-center justify-between;
+  @apply fixed top-0 right-0 left-0 bg-primary;
+  @apply w-full h-16;
+  @apply px-3;
+}
+
+/* footer */
+.footer {
+  @apply fixed bottom-0 right-0 left-0;
+  @apply flex flex-row items-center justify-between;
+  @apply h-10 w-full;
+  @apply px-4;
+  @apply bg-primary;
+}
+.footer .nav-links {
+  @apply flex items-center justify-start;
+}
+.footer .nav-link a {
+  @apply text-black hover:text-primary-dark;
+  @apply text-xs uppercase underline font-semibold;
+  @apply mx-4;
+}
+.footer .nav-link a.active {
+  @apply text-primary-dark;
+  @apply no-underline;
+}
+.footer .copyright {
+  @apply text-primary-dark;
+  @apply text-2xs font-bold;
 }

@@ -1,21 +1,37 @@
 import type { MetaFunction } from "@remix-run/node";
+import { Link } from "@remix-run/react";
+import ContainerBordered from "~/components/Bones/ContainerBordered";
+import PageContainer from "~/components/Bones/PageContainer";
+import Button from "~/components/Button";
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "New Remix App" },
+    { title: "Recipeasy - A Place to Manage Your Recipes" },
     { name: "description", content: "Welcome to Remix!" },
   ];
 };
 
 export default function Index() {
   return (
-    <div className="flex h-screen items-center justify-center">
-      <div className="flex flex-col items-center gap-16">
-        <header className="flex flex-col items-center gap-9">
+    <main id="content" className="h-screen fixed flex justify-center w-full">
+      <PageContainer type="centered" hasBackground>
+        <ContainerBordered>
+          <h1>A better way of keeping track of your recipes</h1>
+          <h2>Welcome Back, Lindsay!</h2>
+          <div className="border-2 border-black w-80 h-36 flex flex-col justify-between">
+            <div className="background-image relative h-1/2 flex justify-center items-center">
+              <span className="px-2 pb-3 bg-white w-fit font-support text-3xl">Recipes</span>
+            </div>
+            <div className="flex flex-row justify-center gap-4 my-4">
+              <Button action="link" link="/" label="Explore Recipes" style="secondary" />
+              <Button action="link" link="/" label="Add Recipe" style="primary" />
+            </div>
 
-        </header>
-        {/* <h1 className="font-support">Recipeasy</h1> */}
-      </div>
-    </div>
+          </div>
+        </ContainerBordered>
+
+
+      </PageContainer>
+    </main>
   );
 }
