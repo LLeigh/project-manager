@@ -1,19 +1,17 @@
-import { json } from "@remix-run/node";
-import { useLoaderData } from "@remix-run/react";
 import PageContainer from "~/components/Bones/PageContainer";
-// import RecipeList from "~/components/RecipeList";
+import { mockRecipes } from "recipes";
 
-// export const loader = async () => {
-//   const recipes = await fetchRecipes(); // Fetch recipes from a database or API
-//   return json({ recipes });
-// };
+const recipes = mockRecipes;
 
 export default function RecipesIndex() {
-//   const { recipes } = useLoaderData<typeof loader>();
+
   return (
     <PageContainer type="centered">
       <h1>Explore Recipes</h1>
-      {/* <RecipeList recipes={recipes} /> */}
+      <div>
+        {JSON.stringify(recipes)}
+      </div>
     </PageContainer>
   );
 }
+
