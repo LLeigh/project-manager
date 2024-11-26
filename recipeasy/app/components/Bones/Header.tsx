@@ -4,7 +4,7 @@ import Button from "../Button";
 
 export default function Index() {
     return(
-        <div className="header">
+        <div className="header z-50">
             <Link to="/">
                 <Logo />
             </Link>

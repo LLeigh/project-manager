@@ -33,13 +33,17 @@ body {
 }
 
 h1 {
-  @apply font-support text-4xl;
+  @apply font-support capitalize text-4xl my-6;
 }
 h2 {
-  @apply font-sans text-xl capitalize;
+  @apply font-sans text-xl capitalize my-4;
 }
 h3 {
-  @apply font-sans text-base uppercase;
+  @apply font-support text-2xl capitalize;
+}
+
+h4 {
+  @apply font-sans text-base uppercase; 
 }
 
 .background-image {

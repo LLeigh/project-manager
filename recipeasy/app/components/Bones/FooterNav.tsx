@@ -21,7 +21,7 @@ export default function Logo() {
                 </li>
             </ul>
             <div>
-                <span className="copyright">©2024 Recipeezy</span>
+                <span className="copyright">©2024 Recipeasy</span>
             </div>
         </div>
     )
