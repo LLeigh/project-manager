@@ -45,7 +45,9 @@ h3 {
 h4 {
   @apply font-sans text-base uppercase; 
 }
-
+h6 {
+  @apply font-sans text-sm font-bold capitalize;
+}
 .background-image {
   background-image: url('/assets/images/background.png');
   background-size: 80%;
@@ -53,6 +55,13 @@ h4 {
 }
 
 /* Component Styles */
+/* tag */
+.tag {
+  @apply flex items-center justify-between w-fit;
+  @apply bg-primary border border-black rounded-full;
+  @apply text-black font-semibold uppercase;
+  @apply px-2 py-[0.125rem];
+}
 
 /* logo */
 .logo {
@@ -84,6 +93,15 @@ a.link {
   @apply bg-primary text-secondary;
   @apply hover:text-white hover:bg-black;
 }
+
+/* Recipe Card */
+.gradient-border {
+  @apply h-1 w-full bg-gradient-to-r from-tertiary to-primary;
+}
+.gradient-bg {
+  @apply bg-gradient-to-r from-tertiary to-primary;
+}
+
 /* Bone Styles  */
 
 /* header */
