@@ -23,14 +23,12 @@ export default function Index() {
               <span className="px-2 pb-3 bg-white w-fit font-support text-3xl">Recipes</span>
             </div>
             <div className="flex flex-row justify-center gap-4 my-4">
-              <Button action="link" link="/" label="Explore Recipes" style="secondary" />
+              <Button action="link" link="/recipes" label="Explore Recipes" style="secondary" />
               <Button action="link" link="/" label="Add Recipe" style="primary" />
             </div>
 
           </div>
         </ContainerBordered>
-
-
       </PageContainer>
     </main>
   );
