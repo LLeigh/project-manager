@@ -4,7 +4,7 @@ export const mockRecipes: Recipe[] = [
     {
       id: "1",
       title: "Spaghetti Carbonara",
-      image: "https://example.com/spaghetti-carbonara.jpg",
+      image: "https://images.unsplash.com/photo-1588013273468-315fd88ea34c?q=80&w=1738&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       ingredients: [
         { id: "1", name: "Spaghetti", quantity: "200g", type: "grocery" },
         { id: "2", name: "Eggs", quantity: "3", type: "grocery" },
@@ -42,10 +42,10 @@ export const mockRecipes: Recipe[] = [
     },
     {
       id: "2",
-      title: "Chicken Curry",
-      image: "https://example.com/chicken-curry.jpg",
+      title: "Tofu Curry",
+      image: "https://media.istockphoto.com/id/1225795312/photo/tofu-curry-soup-with-vegetables.webp?a=1&b=1&s=612x612&w=0&k=20&c=UHPl1brrVCSGNBIQJRSv2HMxZKGrbrSwf16NIb8VuGc=",
       ingredients: [
-        { id: "1", name: "Chicken Breast", quantity: "500g", type: "grocery" },
+        { id: "1", name: "Block Tofu", quantity: "500g", type: "grocery" },
         { id: "2", name: "Onions", quantity: "2, diced", type: "grocery" },
         { id: "3", name: "Garlic", quantity: "4 cloves, minced", type: "grocery" },
         { id: "4", name: "Ginger", quantity: "1 tbsp, minced", type: "grocery" },
@@ -57,7 +57,7 @@ export const mockRecipes: Recipe[] = [
       directions: [
         { id: "1", order: 1, instruction: "Heat oil in a pan and sauté onions until golden." },
         { id: "2", order: 2, instruction: "Add garlic, ginger, and curry powder, and cook for 1 minute." },
-        { id: "3", order: 3, instruction: "Add chicken and cook until browned." },
+        { id: "3", order: 3, instruction: "Add tofu and cook until browned." },
         { id: "4", order: 4, instruction: "Pour in coconut milk and simmer until chicken is cooked through." },
         { id: "5", order: 5, instruction: "Season with salt and serve with rice or naan." },
       ],
