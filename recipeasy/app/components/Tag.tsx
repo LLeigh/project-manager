@@ -5,7 +5,7 @@ export default function Tag({
     size = "base",
 }: {
     name: string;
-    size: "base" | "small";
+    size?: "base" | "small";
 }) {
 
     const smallSizeClasses ="text-2xs";

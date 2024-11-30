@@ -1,6 +1,7 @@
 import PageContainer from "~/components/Bones/PageContainer";
 import { mockRecipes } from "recipes";
 import RecipeCard from "~/components/RecipeCard";
+import { Recipe } from "~/models/recipe";
 
 const recipes = mockRecipes;
 

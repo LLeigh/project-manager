@@ -43,7 +43,7 @@ h3 {
 }
 
 h4 {
-  @apply font-sans text-base uppercase; 
+  @apply font-sans text-sm font-bold uppercase; 
 }
 h6 {
   @apply font-sans text-sm font-bold capitalize;
