@@ -1,9 +1,10 @@
 import PageContainer from "~/components/Bones/PageContainer";
-import { mockRecipes } from "recipes";
+// import { mockRecipes } from "mockRecipesData";
+import { recipes } from "recipes.json";
 import RecipeCard from "~/components/RecipeCard";
 import { Recipe } from "~/models/recipe";
 
-const recipes = mockRecipes;
+const storedRecipes: Recipe[] = recipes;
 
 export default function RecipesIndex() {
 
@@ -11,8 +12,7 @@ export default function RecipesIndex() {
     <PageContainer type="centered">
       <h1>Explore Recipes</h1>
       <div className="flex gap-4">
-        {/* {JSON.stringify(recipes)} */}
-        {recipes.map((recipe: Recipe, index: number) => (
+        {storedRecipes.map((recipe: Recipe, index: number) => (
           <RecipeCard recipe={recipe}/>
         ))}
       </div>

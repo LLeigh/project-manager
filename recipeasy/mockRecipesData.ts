@@ -1,4 +1,4 @@
-import { Recipe } from "~/models/recipe";
+import { Recipe, RecipeSource } from "~/models/recipe";
 
 export const mockRecipes: Recipe[] = [
     {
@@ -14,14 +14,13 @@ export const mockRecipes: Recipe[] = [
         { id: "6", name: "Black Pepper", quantity: "To taste", type: "pantry" },
       ],
       directions: [
-        { id: "1", order: 1, instruction: "Cook spaghetti according to package instructions." },
-        { id: "2", order: 2, instruction: "In a bowl, whisk eggs and grated Parmesan together." },
-        { id: "3", order: 3, instruction: "Cook pancetta in a skillet until crispy." },
-        { id: "4", order: 4, instruction: "Drain spaghetti and mix quickly with egg mixture and pancetta." },
-        { id: "5", order: 5, instruction: "Season with salt and freshly ground black pepper. Serve immediately." },
+        { order: 1, instruction: "Cook spaghetti according to package instructions." },
+        { order: 2, instruction: "In a bowl, whisk eggs and grated Parmesan together." },
+        { order: 3, instruction: "Cook pancetta in a skillet until crispy." },
+        { order: 4, instruction: "Drain spaghetti and mix quickly with egg mixture and pancetta." },
+        { order: 5, instruction: "Season with salt and freshly ground black pepper. Serve immediately." },
       ],
       source: {
-        id: "1",
         author: "Chef Mario",
         type: "Cookbook",
         title: "Italian Classics",
@@ -33,7 +32,7 @@ export const mockRecipes: Recipe[] = [
           title: "Caesar Salad",
           ingredients: [],
           directions: [],
-          source: { id: "2", author: "Chef Anna" },
+          source: { author: "Chef Anna" },
         },
       ],
       tags: ["Pasta", "Italian", "Dinner"],
@@ -55,14 +54,13 @@ export const mockRecipes: Recipe[] = [
         { id: "8", name: "Salt", quantity: "To taste", type: "pantry" },
       ],
       directions: [
-        { id: "1", order: 1, instruction: "Heat oil in a pan and sauté onions until golden." },
-        { id: "2", order: 2, instruction: "Add garlic, ginger, and curry powder, and cook for 1 minute." },
-        { id: "3", order: 3, instruction: "Add tofu and cook until browned." },
-        { id: "4", order: 4, instruction: "Pour in coconut milk and simmer until chicken is cooked through." },
-        { id: "5", order: 5, instruction: "Season with salt and serve with rice or naan." },
+        { order: 1, instruction: "Heat oil in a pan and sauté onions until golden." },
+        { order: 2, instruction: "Add garlic, ginger, and curry powder, and cook for 1 minute." },
+        { order: 3, instruction: "Add tofu and cook until browned." },
+        { order: 4, instruction: "Pour in coconut milk and simmer until chicken is cooked through." },
+        { order: 5, instruction: "Season with salt and serve with rice or naan." },
       ],
       source: {
-        id: "2",
         author: "Chef Sita",
         type: "Blog",
         title: "Spice Up Your Life",
@@ -73,4 +71,15 @@ export const mockRecipes: Recipe[] = [
       notes: "Add more chili for extra heat.",
     },
   ];
-  
+export const recipeSources: RecipeSource[] = [
+  {
+    author: "self",
+    type: "self",
+  },
+  {
+    author: "Chloe Coscarelli",
+    type: "cookbook",
+    title: "Chloe Flavor"
+  },
+
+]

@@ -7,7 +7,7 @@ import PageContainer from "~/components/Bones/PageContainer";
 import Icon from "~/components/Icon";
 import RecipeCard from "~/components/RecipeCard";
 import Tag from "~/components/Tag";
-import { Recipe } from "~/models/recipe";
+import { Recipe, Step } from "~/models/recipe";
 
 export let loader: LoaderFunction = async ({ params }) => {
     const recipeId = params.id;
@@ -70,7 +70,6 @@ export default function RecipePage() {
                     <div className="relative w-full text-center">
                         <h1 >{recipe.title}</h1>
                         <hr className="mb-1" />
-                        {/* <div className="gradient-border my-2"></div> */}
                         <p className="text-2xs font-semibold">
                             <span className="uppercase">Source: </span>
                             {recipe.source.link ?
@@ -125,7 +124,7 @@ export default function RecipePage() {
                                 <h4>directions:</h4>
                                 <hr className="mt-1 mb-3" />
                                 {recipe.directions.map((step) => (
-                                    <p key={step.id} className="py-1 text-sm">
+                                    <p key={step.order} className="py-1 text-sm">
                                         <span className="mr-2">{step.order}</span>
                                         <span>{step.instruction}</span>
                                     </p>
@@ -136,7 +135,7 @@ export default function RecipePage() {
                     {isComboView && (
                         <ul>
                             {directionsWithIngredientQuantities.map((step) => (
-                                <p key={step.id} className="py-1 text-xs">
+                                <p key={step.order} className="py-1 text-xs">
                                     <span className="mr-2">{step.order}</span>
                                     <span>{step.instruction}</span>
                                 </p>

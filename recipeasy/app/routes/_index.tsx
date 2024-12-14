@@ -24,7 +24,7 @@ export default function Index() {
             </div>
             <div className="flex flex-row justify-center gap-4 my-4">
               <Button action="link" link="/recipes" label="Explore Recipes" style="secondary" />
-              <Button action="link" link="/" label="Add Recipe" style="primary" />
+              <Button action="link" link="/recipes-add" label="Add Recipe" style="primary" />
             </div>
 
           </div>

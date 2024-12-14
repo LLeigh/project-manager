@@ -54,7 +54,64 @@ h6 {
   @apply bg-repeat;
 }
 
+hr {
+  @apply border-gray;
+}
+
 /* Component Styles */
+
+/* inputs */
+
+.input-container {
+  @apply relative flex flex-col w-full my-3;
+}
+.input-file-container label {
+  @apply relative flex flex-col h-8 w-full px-2;
+  @apply border border-black rounded-full;
+  @apply hover:border-focus focus:outline-focus;
+}
+.input-container label,
+.input-file-container span.label,
+span.label,
+.ingredient-labels span {
+  @apply text-xs font-semibold capitalize;
+  @apply ml-1 mb-1;
+}
+.radio-container,
+.checkbox-container {
+  @apply flex flex-row items-center;
+  @apply m-2;
+}
+.radio-container label,
+.checkbox-container label {
+  @apply text-xs font-normal capitalize;
+  @apply ml-1;
+}
+.input-group {
+  @apply flex flex-row flex-wrap;
+}
+.input-group .label {
+  @apply text-xs font-semibold capitalize;
+}
+.input-container input,
+.input-container select {
+  @apply border border-black rounded-full;
+  @apply text-xs placeholder:text-gray;
+  @apply px-3 py-2;
+  @apply hover:border-focus focus:outline-focus;
+}
+
+.input-container select {
+  @apply appearance-none;
+}
+
+.input-container textarea {
+  @apply border border-black rounded-lg;
+  @apply text-xs;
+  @apply p-2;
+  @apply hover:border-focus focus:outline-focus;
+}
+
 /* tag */
 .tag {
   @apply flex items-center justify-between w-fit;

@@ -1,3 +1,4 @@
+
 export interface Ingredient {
     id: string;
     name: string;
@@ -6,13 +7,11 @@ export interface Ingredient {
 }
 
 export interface Step {
-    id: string;
     order: number;
     instruction: string;
 }
 
 export interface RecipeSource {
-    id: string;
     author: string;
     type?: string;
     title?: string;

@@ -8,7 +8,7 @@ export default function Index() {
             <Link to="/">
                 <Logo />
             </Link>
-            <Button action="link" link="/recipes/add" label="Add a Recipe" style="primary"/>
+            <Button action="link" link="/recipes-add" label="Add a Recipe" style="primary"/>
         </div>
     )
 }
