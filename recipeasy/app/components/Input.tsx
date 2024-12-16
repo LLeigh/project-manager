@@ -39,7 +39,7 @@ export default function Input({
     const InputTextarea =
         <div className="input-container">
             {showLabel &&(<label htmlFor={labelFor}>{label}</label>)}
-            <textarea id={id} rows={rows} name={name} placeholder={placeholder} required={isRequired} />
+            <textarea id={id} rows={rows} name={name} placeholder={placeholder} required={isRequired}  className="min-h-14"/>
         </div>;
 
     const InputSelect =

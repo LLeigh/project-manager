@@ -11,7 +11,7 @@ export default function RecipesIndex() {
   return (
     <PageContainer type="centered">
       <h1>Explore Recipes</h1>
-      <div className="flex gap-4">
+      <div className="flex flex-row flex-wrap gap-4">
         {storedRecipes.map((recipe: Recipe, index: number) => (
           <RecipeCard recipe={recipe}/>
         ))}

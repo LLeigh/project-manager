@@ -5,12 +5,6 @@ export interface Ingredient {
     quantity: string;
     type: string; // 'pantry' | 'grocery'
 }
-
-export interface Step {
-    order: number;
-    instruction: string;
-}
-
 export interface RecipeSource {
     author: string;
     type?: string;
@@ -23,7 +17,7 @@ export interface Recipe {
     title: string;
     image?: string;
     ingredients: Ingredient[];
-    directions: Step[];
+    directions: string[];
     source: RecipeSource;
     pairings?: Recipe[];
     tags?: string[];

@@ -52,10 +52,10 @@ export default function RecipeCard({ recipe }: { recipe: Recipe; }) {
                 {showBackOfCard && (
                     <>
                         <div className="flex flex-col">
-                            {recipe.directions.map((step: Step, index: number) => (
-                                <p key={step.id} className="py-1 text-xs">
-                                    <span className="mr-2">{step.order}</span>
-                                    <span>{step.instruction}</span>
+                            {recipe.directions.map((step: string, index: number) => (
+                                <p key={index} className="py-1 text-xs">
+                                    <span className="mr-2">{index + 1}.</span>
+                                    <span>{step}</span>
                                 </p>
                             ))}
                         </div>

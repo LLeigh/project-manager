@@ -2,12 +2,11 @@ import { Form, Link, redirect, useNavigation } from "@remix-run/react";
 import Tag from "./Tag";
 import InputGroup from "./InputGroup";
 import { Ingredient, Recipe } from "~/models/recipe";
-import { isNetworkErrorResponse } from "@remix-run/react/dist/data";
 import Input from "./Input";
 import Button from "./Button";
 import { action } from "~/routes/recipes-add"; // Adjust the path as necessary
 import { recipeSources } from "mockRecipesData";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Icon from "./Icon";
 
 export default function NewRecipeForm() {
@@ -19,7 +18,6 @@ export default function NewRecipeForm() {
     const ingredientTypes = ['pantry', 'grocery'];
 
     const addIngredient = () => {
-        console.log("add ingredient clicked");
         setIngredients((prevIngredients) => [
             ...prevIngredients,
             { quantity: "", name: "", type: "pantry" },
@@ -27,7 +25,6 @@ export default function NewRecipeForm() {
     };
 
     const removeIngredient = (index: number) => {
-        console.log("remove button clicked");
         setIngredients(ingredients.filter((_, i) => i !== index));
     };
 
@@ -39,9 +36,26 @@ export default function NewRecipeForm() {
         });
     };
 
-    useEffect(() => {
-        console.log("Ingredients state:", ingredients);
-    }, [ingredients]);
+
+
+    const [directions, setDirections] = useState(['']);
+
+    const addDirectionStep = () => {
+        console.log('add step clicked');
+        setDirections((prevDirections) => [...prevDirections, '']);
+    };
+
+ const handleDirectionStepChange = (index: number, value: string) => {
+        setDirections((prevDirections) => {
+            const updatedDirections = [...prevDirections];
+            updatedDirections[index] = value;
+            return updatedDirections;
+        });
+    };
+
+    const removeDirectionStep = (index: number) => {
+        setDirections(directions.filter((_, i) => i !== index));
+    };
 
     return (
         <Form method="post" id="recipe-form" className="w-full">
@@ -155,61 +169,17 @@ export default function NewRecipeForm() {
                                 onChange={(e) => handleIngredientChange(index, "type", e.target.value)}
                             />
                         </div>
-                        <button
-                            type="button"
+                        <Button
+                            action="function"
+                            label="remove ingredient"
                             onClick={() => removeIngredient(index)}
-                            className="text-red-500"
+                            iconOnly={true}
+                            style="icon-only"
                         >
-                            <Icon icon="close" className="text-tertiary hover:text-focus h-8 w-8"/>
-                        </button>
+                            <Icon icon="close" className="text-tertiary hover:text-focus h-8 w-8" />
+                        </Button>
                     </div>
                 ))}
-
-                {/* {ingredients.map((ingredient, index) => (
-                    <div key={index} className="flex flex-row justify-between items-start">
-                        <div className="w-1/6">
-                            <Input
-                                type="text"
-                                id={`ingredientQuantity-${index}`}
-                                name={`ingredients[${index}][quantity]`}
-                                label="Quantity"
-                                labelFor={`ingredientQuantity-${index}`}
-                                placeholder="Ex: 1 tsp"
-                                value={ingredient.quantity}
-                                onChange={(e) => handleIngredientChange(index, "quantity", e.target.value)}
-                            />
-                        </div>
-                        <div className="w-3/6 mx-2">
-                            <Input
-                                type="text"
-                                id={`ingredientName-${index}`}
-                                label="Ingredient"
-                                labelFor={`ingredientName-${index}`}
-                                name={`ingredient[${index}].name`}
-                                placeholder="Example: Onion, chopped"
-                                value={ingredient.name}
-                                onChange={(e) => handleIngredientChange(index, "name", e.target.value)}
-                            />
-                        </div>
-                        <div className="w-3/6 mx-2">
-                            <InputGroup
-                                type="radio"
-                                name={`ingredient[${index}].type`}
-                                label="Ingredient type"
-                                options={ingredientTypes}
-                                onChange={(e) => handleIngredientChange(index, "type", e.target.value)}
-                            />
-                        </div>
-                        <button
-                            type="button"
-                            onClick={() => removeIngredient(index)}
-                            className="text-red-500"
-                        >
-                            Remove
-                        </button>
-                    </div>
-
-                ))} */}
                 <Button
                     action="function"
                     label="Add Ingredient"
@@ -218,7 +188,39 @@ export default function NewRecipeForm() {
                 />
 
             </div>
-
+            <div className="recipe-steps mt-8">
+                <h4>directions:</h4>
+                <hr className="mt-1 mb-6" />
+                {directions.map((step, index) => (
+                    <div key={index} className="flex flex-row justify-start items-center">
+                        <Input
+                            type="textarea"
+                            id={`directions[${index}]`}
+                            label={`step ${index + 1}:`}
+                            labelFor={`directions[${index}]`}
+                            name={`directions[${index}]`}
+                            placeholder="Example: Bring a pot of water to boil."
+                            value={step}
+                            onChange={(e) => handleDirectionStepChange(index, e.target.value)}
+                        />
+                        <Button
+                            action="function"
+                            label="remove step"
+                            onClick={() => removeDirectionStep(index)}
+                            iconOnly={true}
+                            style="icon-only"
+                        >
+                            <Icon icon="close" className="text-tertiary hover:text-focus h-8 w-8 mt-4" />
+                        </Button>
+                    </div>
+                ))}
+                <Button
+                    action="function"
+                    label="Add Step"
+                    style="primary"
+                    onClick={addDirectionStep}
+                />
+            </div>
             <div className="flex flex-row justify-end gap-3">
                 <Button
                     action="link"

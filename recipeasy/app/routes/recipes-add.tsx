@@ -33,7 +33,19 @@ export async function action({ request }: { request: Request }) {
         };
       }
       return acc;
-  }, []);
+    }, []);
+
+    const directions = Array.from(formData.entries())
+    .filter(([key]) => key.startsWith("directions["))
+    .reduce((acc: string[], [key, value]) => {
+      const match = key.match(/directions\[(\d+)\]/);
+      if (match) {
+        const [, index] = match;
+        acc[parseInt(index)] = value as string;
+      }
+      return acc;
+    }, []);
+
 
   if (typeof title !== "string" || title.trim().length === 0) {
     return json({ error: "Title is required" }, { status: 400 });
@@ -43,7 +55,7 @@ export async function action({ request }: { request: Request }) {
     id: recipeId,
     title,
     ingredients,
-    directions: [],  // Hardcoded empty array for now
+    directions,
     source: {
       author: sourceAuthor,
       type: sourceType,
