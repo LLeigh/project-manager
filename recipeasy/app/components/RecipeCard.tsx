@@ -1,6 +1,6 @@
 import { Link } from "@remix-run/react";
 import { useState } from "react";
-import { Ingredient, Recipe, Step } from "~/models/recipe";
+import { Ingredient, Recipe } from "~/models/recipe";
 import Icon from "./Icon";
 import Tag from "./Tag";
 

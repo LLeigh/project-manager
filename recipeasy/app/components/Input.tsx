@@ -66,13 +66,13 @@ export default function Input({
 
     const InputRadio =
         <div className="radio-container">
-            <input type="radio" id={id} name={name} checked={checked} onChange={onChange}></input>
+            <input type="radio" id={id} name={name} checked={checked} value={value} onChange={onChange}></input>
             <label htmlFor={labelFor}>{label}</label>
         </div>;
 
     const InputCheckbox =
         <div className="checkbox-container">
-            <input type="checkbox" id={id} name={name} checked={checked} onChange={onChange}></input>
+            <input type="checkbox" id={id} name={name} checked={checked} value={value} onChange={onChange}></input>
             <label htmlFor={labelFor}>{label}</label>
         </div>;
     return (

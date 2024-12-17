@@ -43,6 +43,7 @@ export default function InputGroup({
                     label={option}
                     labelFor={option}
                     name={type === "radio" ? name : option}
+                    value={option} 
                     checked={
                         type === "radio" ? selectedValue === option : (selectedValue as string[]).includes(option)
                     }

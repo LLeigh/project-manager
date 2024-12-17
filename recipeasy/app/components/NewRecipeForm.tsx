@@ -241,17 +241,7 @@ export default function NewRecipeForm() {
 }
 
 // source
-{/* <div className="flex flex-col w-1/2 ml-2"> */ }
-{/* <Input
-            type="text"
-            id="source-new"
-            label="add a new source"
-            labelFor="souce-new"
-            name="source-new"
-            placeholder="Add a New Source"
-        /> */}
 
-{/* </div> */ }
 // IMAGE
 //     <div className="w-full flex flex-row items-start">
 //        <Input
@@ -263,46 +253,6 @@ export default function NewRecipeForm() {
 //        />
 //    </div>
 
-// ingredients
-
-{/* <Input
-                                type="text"
-                                id="ingredientquantity"
-                                label="quantity"
-                                labelFor="ingredientquantity"
-                                name="ingredientquantity"
-                                placeholder="Ex: 1 tsp"
-                            /> */}
-
-//     <Input
-//     type="text"
-//     id="ingredientName"
-//     label="Ingredient"
-//     labelFor="ingredientName"
-//     name="ingredientName"
-//     placeholder="Example: Onion, chopped"
-
-// />
-{/* <InputGroup
-type="radio"
-name="ingredientType"
-label="ingredient type"
-options={ingredientTypes}
-/> */}
-
-//    steps (directions) need to update this
-
-//     <div>
-//     <Input
-//         type="textarea"
-//         id="directions"
-//         label="directions"
-//         labelFor="ingredient-name"
-//         name="ingredient-name"
-//         placeholder="Example: Onion, chopped"
-
-//     />
-// </div>
 
 // meal prep notes
 
@@ -385,28 +335,3 @@ options={ingredientTypes}
 //     style="primary"
 // />
 // </div>
-
-
-// old logic: 
-// const navigation = useNavigation();
-// const isSubmitting = navigation.state === 'submitting';
-
-
-// const commonTags = ['breakfast', 'lunch', 'dinner', 'low calorie', 'high protein', 'meal prep', 'cozy', 'winter', 'summer', 'oil free'];
-// const sources = [
-//     {
-//         "name": "self",
-//         "type": "self"
-//     },
-//     {
-//         "name": "Chloe Flavor",
-//         "type": "cookbook"
-//     },
-//     {
-//         "name": "Rabbit and Wolves",
-//         "type": "blog"
-//     },
-
-// ];
-// const sourceTypes = ['self', 'cookbook', 'blog'];
-// const ingredientTypes = ['pantry', 'grocery'];
