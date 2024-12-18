@@ -45,7 +45,7 @@ export default function NewRecipeForm() {
         setDirections((prevDirections) => [...prevDirections, '']);
     };
 
- const handleDirectionStepChange = (index: number, value: string) => {
+    const handleDirectionStepChange = (index: number, value: string) => {
         setDirections((prevDirections) => {
             const updatedDirections = [...prevDirections];
             updatedDirections[index] = value;
@@ -221,7 +221,27 @@ export default function NewRecipeForm() {
                     onClick={addDirectionStep}
                 />
             </div>
-            <div className="flex flex-row justify-end gap-3">
+            <div className="mt-8">
+                <Input
+                    type="textarea"
+                    id="mealPrepNotes"
+                    label="Meal Prep Notes"
+                    labelFor="mealPrepNotes"
+                    name="mealPrepNotes"
+                    placeholder="Example: good as burrito filling for meal prep"
+                />
+            </div>
+            <div className="mt-8">
+                <Input
+                    type="textarea"
+                    id="notes"
+                    label="other notes"
+                    labelFor="notes"
+                    name="notes"
+                    placeholder="Example: Pairs well with asparagus"
+                />
+            </div>
+            <div className="flex flex-row justify-end gap-3 mt-10">
                 <Button
                     action="link"
                     link="/recipes"
@@ -253,35 +273,6 @@ export default function NewRecipeForm() {
 //        />
 //    </div>
 
-
-// meal prep notes
-
-{/* <div>
-<Input
-    type="textarea"
-    id="notes-mealprep"
-    label="directions"
-    labelFor="notes-mealprep"
-    name="notes-mealprep"
-    placeholder="Example: good as burrito filling for meal prep"
-
-/>
-</div> */}
-
-
-// general isNetworkErrorResponse
-
-{/* <div>
-<Input
-    type="textarea"
-    id="notes-general"
-    label="other notes"
-    labelFor="notes-general"
-    name="notes-general"
-    placeholder="Example: Pairs well with asparagus"
-
-/>
-</div> */}
 
 // tags
 

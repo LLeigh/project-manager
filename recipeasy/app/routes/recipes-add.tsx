@@ -19,6 +19,8 @@ export async function action({ request }: { request: Request }) {
   const sourceType = formData.get("sourceType");
   const sourceTitle = formData.get("sourceTitle");
   const sourceLink = formData.get("sourceLink");
+  const mealPrepNotes = formData.get("mealPrepNotes");
+  const notes = formData.get("notes");
 
   // Parse ingredients
   const ingredients = Array.from(formData.entries())
@@ -64,7 +66,8 @@ export async function action({ request }: { request: Request }) {
     },
     pairings: [],
     tags: [],
-    notes: "",
+    mealPrepNotes,
+    notes,
   };
 
 
