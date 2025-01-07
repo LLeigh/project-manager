@@ -8,6 +8,8 @@ import { action } from "~/routes/recipes-add"; // Adjust the path as necessary
 import { recipeSources } from "mockRecipesData";
 import { useState } from "react";
 import Icon from "./Icon";
+import { tags } from "tags.json";
+import Tooltip from "./Tooltip";
 
 export default function NewRecipeForm() {
 
@@ -55,6 +57,17 @@ export default function NewRecipeForm() {
 
     const removeDirectionStep = (index: number) => {
         setDirections(directions.filter((_, i) => i !== index));
+    };
+
+    const recipeTags = tags;
+    const [selectedTags, setSelectedTags] = useState<string[]>([]);
+
+    const handleTagChange = (tag: string) => {
+        setSelectedTags((prevTags) =>
+            prevTags.includes(tag)
+                ? prevTags.filter((t) => t !== tag) // Remove if already selected
+                : [...prevTags, tag] // Add if not selected
+        );
     };
 
     return (
@@ -241,6 +254,45 @@ export default function NewRecipeForm() {
                     placeholder="Example: Pairs well with asparagus"
                 />
             </div>
+            <div className="recipe-tags mt-8">
+                <div className="flex flex-row items-center justify-between">
+                    <h4>Tags:</h4>
+                    <Button action="function" label="add new tag" style="primary" iconOnly onClick={() => {console.log('clicked')}}>
+                        <Icon icon="plus" className="text-primary hover:text-focus h-6 w-6" />
+                        <Tooltip text="Add New Tag" />
+                    </Button>
+                </div>
+
+                <hr className="mt-1 mb-2" />
+                <p className="text-xs mb-2">Use the checkboxes below to select existing tags for your recipe.</p>
+                <div className="flex flex-wrap">
+                    {recipeTags.map((tag) => (
+                        <label key={tag} className="checkbox-container flex items-center gap-2">
+                            <input
+                                type="checkbox"
+                                name="tags"
+                                value={tag}
+                                checked={selectedTags.includes(tag)}
+                                onChange={() => handleTagChange(tag)}
+                                className="form-checkbox"
+                            />
+                            <span className="text-xs font-regular capitalize">{tag}</span>
+                        </label>
+                    ))}
+                </div>
+                <input
+                    type="hidden"
+                    name="selectedTags"
+                    value={JSON.stringify(selectedTags)}
+                />
+                <hr className="mt-1 mb-6" />
+                <div className="w-full flex flex-row justify-start items-center gap-2">
+                    {selectedTags.map((t, index) => (
+                        <Tag key={index} name={t} />
+                    ))}
+                </div>
+            </div>
+
             <div className="flex flex-row justify-end gap-3 mt-10">
                 <Button
                     action="link"
@@ -272,57 +324,3 @@ export default function NewRecipeForm() {
 //            name="image"
 //        />
 //    </div>
-
-
-// tags
-
-{/* <div className="recipe-tags mt-8">
-<h4>tags:</h4>
-<hr className="mt-1 mb-6" />
-<div>
-    <InputGroup
-        type="checkbox"
-        label="Choose from existing tags"
-        values={commonTags}
-    />
-</div>
-<Input
-    type="text"
-    id="add-tag"
-    label="Add New Tag"
-    labelFor="add-tag"
-    name="add-tag"
-/>
-<div>
-    <span className="label block">Tags Added:</span>
-    <div className="mt-4">
-        <Tag name="vegan" />
-    </div>
-
-</div>
-</div> */}
-
-// original buttons:
-
-
-// <div className="flex flex-row justify-end gap-3">
-// <Button
-//     action="link"
-//     // this should be change to navigate to previous page, and a toast should be added
-//     link="/recipes"
-//     style="secondary"
-//     label="Cancel"
-// />
-// <Button
-//     action="submit"
-//     disabled={isSubmitting}
-//     label={isSubmitting ? 'Adding...' : 'Submit Recipe'}
-//     style="primary"
-// />
-// <Button
-//     action="submit"
-
-//     label="submit Recipe"
-//     style="primary"
-// />
-// </div>

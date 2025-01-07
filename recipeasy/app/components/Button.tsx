@@ -29,17 +29,17 @@ export default function Button({
             {iconOnly ? (
                 <>
                     {action === 'link' && (
-                        <Link to={link} className={`button button-${style} ${className}`} aria-label={`link to ${label}`}>
+                        <Link to={link} className={`button-icon-only button-${style} ${className}`} aria-label={`link to ${label}`}>
                             {children}
                         </Link>
                     )}
                     {action === 'submit' && (
-                        <button type="submit" className={`button button-${style} ${className}`} aria-label={`submit form to add new recipe`} disabled={disabled}>
+                        <button type="submit" className={`button-icon-only button-${style} ${className}`} aria-label={`submit form to add new recipe`} disabled={disabled}>
                             {children}
                         </button>
                     )}
                     {action === 'function' && (
-                        <button type="button" className={`button button-${style} ${className}`} aria-label={label} disabled={disabled} onClick={onClick}>
+                        <button type="button" className={`button-icon-only button-${style} ${className}`} aria-label={label} disabled={disabled} onClick={onClick}>
                             {children}
                         </button>
                     )}

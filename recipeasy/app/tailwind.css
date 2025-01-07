@@ -136,7 +136,9 @@ a.link {
   @apply text-black text-sm font-bold underline uppercase;
   @apply hover:text-focus;
 }
-
+.button-icon-only {
+  @apply rounded-full;
+}
 .button {
   @apply rounded-full;
   @apply text-sm font-semibold uppercase;

@@ -14,7 +14,8 @@ export default function InputGroup({
     options: string[];
     name: string;
     showLabel?: boolean;
-    onChange?: (event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => void;
+    // onChange?: (event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement> | any ) => void;
+    onChange?: (value: any) => void;
 }) {
 
     const [selectedValue, setSelectedValue] = useState<string | string[]>(type === "radio" ? "" : []);
@@ -30,7 +31,7 @@ export default function InputGroup({
             );
         }
     };
-    console.log(selectedValue);
+    console.log("value from input group: ", selectedValue);
 
     return (
         <fieldset className={`input-group ${showLabel ? "mt-2" : ""}`}>

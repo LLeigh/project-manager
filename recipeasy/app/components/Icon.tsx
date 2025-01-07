@@ -5,6 +5,7 @@ const icons = [
     "eye-ball",
     "folder",
     "hastag",
+    "plus-circle"
 ];
 
 export default function Icon({ 

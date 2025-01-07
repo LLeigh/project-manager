@@ -21,6 +21,7 @@ export async function action({ request }: { request: Request }) {
   const sourceLink = formData.get("sourceLink");
   const mealPrepNotes = formData.get("mealPrepNotes");
   const notes = formData.get("notes");
+  const tags = JSON.parse(formData.get("selectedTags") as string);
 
   // Parse ingredients
   const ingredients = Array.from(formData.entries())
@@ -65,7 +66,7 @@ export async function action({ request }: { request: Request }) {
       link: sourceLink,
     },
     pairings: [],
-    tags: [],
+    tags,
     mealPrepNotes,
     notes,
   };
