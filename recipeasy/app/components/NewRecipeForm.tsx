@@ -71,7 +71,7 @@ export default function NewRecipeForm() {
     };
 
     return (
-        <Form method="post" id="recipe-form" className="w-full">
+        <Form method="post" encType="multipart/form-data" id="recipe-form" className="w-full">
             <div className="recipe-general-info mt-4">
                 <h4>general info:</h4>
                 <hr className="mt-1 mb-6" />
@@ -257,7 +257,7 @@ export default function NewRecipeForm() {
             <div className="recipe-tags mt-8">
                 <div className="flex flex-row items-center justify-between">
                     <h4>Tags:</h4>
-                    <Button action="function" label="add new tag" style="primary" iconOnly onClick={() => {console.log('clicked')}}>
+                    <Button action="function" label="add new tag" style="primary" iconOnly onClick={() => { console.log('clicked') }}>
                         <Icon icon="plus" className="text-primary hover:text-focus h-6 w-6" />
                         <Tooltip text="Add New Tag" />
                     </Button>
@@ -292,7 +292,17 @@ export default function NewRecipeForm() {
                     ))}
                 </div>
             </div>
-
+            <div className="w-full flex flex-row items-start">
+                <Input
+                    type="file"
+                    id="image"
+                    label="add an image"
+                    labelFor="image"
+                    name="image"
+                    placeholder="upload your image..."
+                    accept="image/*"
+                />
+            </div>
             <div className="flex flex-row justify-end gap-3 mt-10">
                 <Button
                     action="link"
@@ -312,15 +322,3 @@ export default function NewRecipeForm() {
     )
 }
 
-// source
-
-// IMAGE
-//     <div className="w-full flex flex-row items-start">
-//        <Input
-//            type="file"
-//            id="image"
-//            label="add an image"
-//            labelFor="image"
-//            name="image"
-//        />
-//    </div>

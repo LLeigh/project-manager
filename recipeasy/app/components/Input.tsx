@@ -12,6 +12,7 @@ export default function Input({
     rows,
     isRequired,
     options,
+    accept,
     checked,
     onChange,
 }: {
@@ -26,6 +27,7 @@ export default function Input({
     rows?: number;
     isRequired?: boolean;
     options?: string[];
+    accept?: string;
     checked?: boolean;
     onChange?: (event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => void;
 }) {
@@ -55,13 +57,15 @@ export default function Input({
         </div>;
 
     const InputFile =
-        <div className="input-file-container relative">
+        <div className="input-file-container relative group">
             {showLabel &&(
-            // <span className="label">{label}</span>
             <label htmlFor={labelFor}>{label}</label>
             )}
-            <input type="file" id={id} name={name} required={isRequired} className="opacity-0"></input>
-            <Icon icon="folder" className="absolute h-6 w-8 right-1 top-7" />
+            <div className="file-mock-input group-hover:border-focus">
+                <span className="flex items-center h-full text-gray text-xs capitalize">{placeholder}</span>
+            </div>
+            <input type="file" id={id} name={name} accept={accept} required={isRequired} className="absolute top-6 w-full " onChange={onChange}></input>
+            <Icon icon="folder" className="absolute h-6 w-8 right-2 top-7 group-hover:text-primary" />
         </div>;
 
     const InputRadio =

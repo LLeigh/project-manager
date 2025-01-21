@@ -220,6 +220,98 @@
       ],
       "mealPrepNotes": "asdf",
       "notes": ""
+    },
+    {
+      "id": "10",
+      "title": "Recipe with Image",
+      "ingredients": [
+        {
+          "quantity": "1 tsp",
+          "name": "smoked paprika",
+          "type": "pantry"
+        },
+        {
+          "quantity": "1 block",
+          "name": "tofu",
+          "type": "grocery"
+        },
+        {
+          "quantity": "1",
+          "name": "apple",
+          "type": "grocery"
+        }
+      ],
+      "directions": [
+        "adfsf"
+      ],
+      "source": {
+        "author": "Chloe Coscarelli",
+        "type": "cookbook",
+        "title": "chloe flavor",
+        "link": ""
+      },
+      "pairings": [],
+      "tags": [
+        "lunch",
+        "protein",
+        "comfort"
+      ],
+      "mealPrepNotes": "asdfs",
+      "notes": "asdfasd",
+      "image": {}
+    },
+    {
+      "id": "11",
+      "title": "image",
+      "ingredients": [
+        {
+          "quantity": "1 tbls ",
+          "name": "Braggs",
+          "type": "pantry"
+        }
+      ],
+      "directions": [
+        "ddd"
+      ],
+      "source": {
+        "author": "self",
+        "type": "self",
+        "title": "",
+        "link": ""
+      },
+      "pairings": [],
+      "tags": [
+        "comfort"
+      ],
+      "mealPrepNotes": "ddd",
+      "notes": "ddd",
+      "image": {}
+    },
+    {
+      "id": "12",
+      "title": "image Test",
+      "ingredients": [
+        {
+          "quantity": "1 tbls ",
+          "name": "tofu"
+        }
+      ],
+      "directions": [
+        "asfa"
+      ],
+      "source": {
+        "author": "self",
+        "type": "self",
+        "title": "self",
+        "link": ""
+      },
+      "pairings": [],
+      "tags": [
+        "healthy"
+      ],
+      "mealPrepNotes": "asdf",
+      "notes": "sfasd",
+      "imagePath": "apples.png"
     }
   ]
 }

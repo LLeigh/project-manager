@@ -6,7 +6,7 @@ import NewRecipeForm from "~/components/NewRecipeForm";
 import { getNextRecipeId } from "~/helpers/recipe-helpers";
 import { Recipe, RecipeSource } from "~/models/recipe";
 
-import fs from "fs/promises";
+import fs, { writeFile } from "fs/promises";
 import path from "path";
 
 
@@ -22,6 +22,7 @@ export async function action({ request }: { request: Request }) {
   const mealPrepNotes = formData.get("mealPrepNotes");
   const notes = formData.get("notes");
   const tags = JSON.parse(formData.get("selectedTags") as string);
+  const image = formData.get("image") as File;
 
   // Parse ingredients
   const ingredients = Array.from(formData.entries())
@@ -54,6 +55,11 @@ export async function action({ request }: { request: Request }) {
     return json({ error: "Title is required" }, { status: 400 });
   }
 
+  const imagePath = path.join('./uploads/', image.name);
+  const buffer = Buffer.from(await image.arrayBuffer());
+  await writeFile(imagePath, buffer);
+
+
   const newRecipe = {
     id: recipeId,
     title,
@@ -69,6 +75,7 @@ export async function action({ request }: { request: Request }) {
     tags,
     mealPrepNotes,
     notes,
+    imagePath
   };
 
 

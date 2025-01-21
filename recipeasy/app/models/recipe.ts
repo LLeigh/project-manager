@@ -15,7 +15,7 @@ export interface RecipeSource {
 export interface Recipe {
     id: string;
     title: string;
-    image?: string;
+    imagePath?: string;
     ingredients: Ingredient[];
     directions: string[];
     source: RecipeSource;

@@ -46,7 +46,7 @@ export default function RecipeCard({ recipe }: { recipe: Recipe; }) {
                             </ul>
                         </div>
                         <div className="recipe-image w-1/2">
-                            <img src={recipe.image} alt={`${recipe.title}-image`} />
+                            <img src={`/uploads/${recipe.imagePath}`} alt={`${recipe.title}-image`} />
                         </div>
                     </>
                 )}
@@ -55,7 +55,7 @@ export default function RecipeCard({ recipe }: { recipe: Recipe; }) {
                         <div className="flex flex-col">
                             {recipe.directions.map((step: string, index: number) => (
                                 <p key={index} className="py-1 text-xs">
-                                    <span className="mr-2">{index + 1}.</span>
+                                <span className="mr-2">{index + 1}.</span>
                                     <span>{step}</span>
                                 </p>
                             ))}

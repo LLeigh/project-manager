@@ -65,11 +65,12 @@ hr {
 .input-container {
   @apply relative flex flex-col w-full my-3;
 }
-.input-file-container label {
-  @apply relative flex flex-col h-8 w-full px-2;
+.input-file-container .file-mock-input {
+  @apply relative flex flex-col min-w-72 h-8 w-full px-2;
   @apply border border-black rounded-full;
-  @apply hover:border-focus focus:outline-focus;
 }
+
+.input-file-container label,
 .input-container label,
 .input-file-container span.label,
 span.label,
